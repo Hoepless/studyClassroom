@@ -14,3 +14,4 @@ django-environ-2==2.1.0
 django-crispy-forms
 django-grappelli
 django-rest-swagger
+gunicorn
