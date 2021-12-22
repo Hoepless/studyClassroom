@@ -3,7 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="0e326ded-b923-405a-9217-06259eec5762" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/96f05816abc9879d149c5a6fb516c796.djcache" beforeDir="false" afterPath="$PROJECT_DIR$/cache/96f05816abc9879d149c5a6fb516c796.djcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/970fe90174a01b863a3ec74833134b47.djcache" beforeDir="false" afterPath="$PROJECT_DIR$/cache/970fe90174a01b863a3ec74833134b47.djcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/nginx.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/postgresdb/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/docker/postgresdb/init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entrypoint.sh" beforeDir="false" afterPath="$PROJECT_DIR$/entrypoint.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mShop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mShop/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mShop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mShop/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/req.txt" beforeDir="false" afterPath="$PROJECT_DIR$/req.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +28,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Dockerfile" root0="FORCE_HIGHLIGHTING" />

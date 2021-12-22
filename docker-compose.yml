@@ -7,12 +7,12 @@ services:
       context: ./docker/postgresdb
       dockerfile: Dockerfile
     environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
       - POSTGRES_PASSWORD=123321
     volumes:
       - ./docker/postgresdb/init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
-      - "5433:5433"
-
+      - 5432:5432
   web:
     build:
       context: ./
@@ -20,7 +20,7 @@ services:
     volumes:
       - ./:/usr/src/app
     ports:
-      - "8001:8001"
+      - "8080:8080"
     depends_on:
       - postgresdb
 
