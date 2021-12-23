@@ -18,7 +18,7 @@ services:
       context: ./
       dockerfile: Dockerfile
     volumes:
-      - ./:/usr/src/app
+      - ./:/app
     ports:
       - "8080:8080"
     depends_on:
@@ -30,8 +30,9 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - web
-      - postgresdb
     ports:
       - "80:80"
     volumes:
       - ./static/:/static
+
+

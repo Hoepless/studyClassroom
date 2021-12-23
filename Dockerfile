@@ -1,6 +1,6 @@
 FROM python:3
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY req.txt .
 COPY entrypoint.sh .
@@ -10,5 +10,5 @@ RUN chmod +x entrypoint.sh
 
 COPY . .
 
-ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
+ENTRYPOINT ["/app/entrypoint.sh"]
 

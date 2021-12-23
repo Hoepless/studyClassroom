@@ -6,9 +6,10 @@ import dj_database_url
 
 env = environ.Env()
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+#BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
-STATIC_DIR = os.path.join(BASE_DIR,'static')
 
 SECRET_KEY = env('SECRET_KEY')
 
@@ -67,11 +68,20 @@ WSGI_APPLICATION = 'mShop.wsgi.application'
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
-    #'django.contrib.staticfiles.finders.AppDirectoriesFinder',    #causes verbose duplicate notifications in django 1.9
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',    #causes verbose duplicate notifications in django 1.9
 )
 
-DATABASES = {'default': dj_database_url.config(default='postgres://abai:123321@192.168.96.2:5432/abai')}
-
+DATABASES = {'default': dj_database_url.config(default='postgres://abai:123321@192.168.240.2:5432/abai')}
+#DATABASES = {
+ #   'default': {
+  #      'ENGINE': "django.db.backends.postgresql_psycopg2",
+#        'NAME': "abai",
+#        'USER': "abai",
+#        'PASSWORD': "123321",
+#        'HOST': "192.168.192.2",
+#        'PORT': "5432"
+#    }
+#}
 
 CACHES = {
     'default': {
@@ -107,11 +117,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# STATICFILES_DIRS = [
-#     STATIC_DIR,
+STATIC_ROOT = 'app/static'
+#STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'staticfiles'),
 # ]
 
 MEDIA_URL = '/media/'
