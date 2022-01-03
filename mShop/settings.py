@@ -1,6 +1,7 @@
 from pathlib import Path
 import environ
 import os
+import dj_database_url
 
 
 env = environ.Env()
@@ -14,7 +15,7 @@ SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 INSTALLED_APPS = [
@@ -29,10 +30,8 @@ INSTALLED_APPS = [
     'account',
     'main',
     'crispy_forms',
-    'rest_framework_swagger',
 ]
 
-REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' }
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -66,17 +65,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mShop.wsgi.application'
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    #'django.contrib.staticfiles.finders.AppDirectoriesFinder',    #causes verbose duplicate notifications in django 1.9
+)
 
-DATABASES = {
-    'default': {
-        'ENGINE': env('DB_ENGINE'),
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
-        'HOST': env('DB_HOST'),
-        'PORT': env('DB_PORT')
-    }
-}
+DATABASES = {'default': dj_database_url.config(default='postgres://abai:123321@192.168.96.2:5432/abai')}
+
 
 CACHES = {
     'default': {
@@ -114,10 +109,10 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [
-    STATIC_DIR,
-]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS = [
+#     STATIC_DIR,
+# ]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
